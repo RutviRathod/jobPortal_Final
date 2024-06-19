@@ -38,6 +38,7 @@ export class JobComponent implements OnInit {
     }
   }
 
+  
   onReset(jobForm: NgForm) {
     jobForm.reset();
   }
