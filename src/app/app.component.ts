@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-root',
@@ -7,11 +10,12 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  users$!: Observable<any>;
   constructor(private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
-    //GET
-    //this.firestore.collection('blogs').valueChanges().subscribe(console.log)
+    // GET
+    //this.users$ = this.firestore.collection('users').valueChanges();
     // POST
     // this.firestore.collection('blogs').add({
     //   blogTitle: 'from app',
@@ -26,8 +30,6 @@ export class AppComponent {
 
 
   }
-  showNotification = false;
-  handleButtonClick(value: boolean) {
-    this.showNotification = !value
-  }
+  
+  
 }

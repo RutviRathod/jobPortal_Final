@@ -1,3 +1,4 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
 /* You can add global styles to this file, and also import other style files */
 body,
 h1,
@@ -16,4 +17,10 @@ button {
 .fa-anchor,
 .fa-coffee {
   font-size: 200px;
+}
+
+
+
+p {
+  font-family: Lato;
 }

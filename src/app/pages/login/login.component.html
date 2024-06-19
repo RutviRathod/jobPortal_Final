@@ -1,0 +1,56 @@
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+  <h1 class="display-4 fw-normal">Login</h1>
+</div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        
+        <div class="form-group mt-2">
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            ngModel
+
+            #email="ngModel"
+            required
+
+            maxlength="10"
+            minlength="5"
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+
+            class="form-control"
+            placeholder="email"
+          />
+          <span *ngIf="!email.valid && email.touched">
+            Please enter a valid email
+          </span>
+        </div>
+
+        <div class="form-group mt-2">
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            ngModel
+
+            required
+            #password="ngModel"
+
+            maxlength="10"
+            minlength="5"
+            
+            class="form-control"
+            placeholder="password"
+          />
+          <span *ngIf="!password.valid && password.touched">
+            Please enter a valid password
+          </span>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

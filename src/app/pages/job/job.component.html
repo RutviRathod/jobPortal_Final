@@ -1,0 +1,103 @@
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+  <p class="fs-5 text-body-secondary">Enter new job details below</p>
+</div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="form-group">
+          <label>Job Posted By</label>
+          <input
+            type="text"
+            ngModel
+
+            name="jobPostedBy"
+            class="form-control"
+
+            #jobPostedBy="ngModel"
+            required
+
+            minlength="5"
+            maxlength="10"
+
+            placeholder="Job posted by"
+            
+          />
+          <span *ngIf="!jobPostedBy.valid && jobPostedBy.touched">
+            Please enter a valid name
+          </span>
+        </div>
+        <div class="form-group mt-2">
+          <label>Job Description</label>
+          <textarea
+          ngModel
+            name="jobDescription"
+            class="form-control"
+
+            
+            required
+
+            #jobDescription="ngModel"
+            minlength="15"
+            maxlength="100"
+
+            placeholder="Job description"
+            
+          ></textarea>
+          <span *ngIf="!jobDescription.valid && jobDescription.touched">
+            Please enter a valid description
+          </span>
+        </div>
+        <div class="form-group mt-2">
+          <label>Posted Date</label>
+          <input
+            type="date"
+            ngModel
+            name="postedDate"
+            
+            required
+            #postedDate="ngModel"
+            
+            class="form-control"
+            
+          />
+          <span *ngIf="!postedDate.valid && postedDate.touched">
+            Please enter date
+          </span>
+        </div>
+        <div class="form-group mt-2">
+          <label>Company Name</label>
+          <input
+            type="text"
+            ngModel
+            name="companyName"
+            class="form-control"
+            placeholder="Company name"
+            required
+
+            #companyName="ngModel"
+
+            minlength="6"
+            maxlength="10"
+          />
+          <span *ngIf="!companyName.valid && companyName.touched">
+            Please enter a valid name
+          </span>
+        </div>
+        <div class="form-group mt-2">
+          <label>Job Name</label>
+          <select ngModel name="jobName" class="form-control" required #jobName="ngModel">
+            <option value="" disabled>Select Job Name</option>
+            <option value="frontend">Frontend</option>
+            <option value="backend">Backend</option>
+            <option value="fullstack">Full Stack</option>
+          </select>
+          <span *ngIf="!jobName.valid && jobName.touched">Please select Job Name</span>
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+        <br />
+        <button (click)="onReset(f)" type="reset" class="btn btn-primary mt-4">Reset</button>
+      </form>
+    </div>
+  </div>
+</div>

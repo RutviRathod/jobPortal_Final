@@ -7,19 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  navItems = [
-    { text: 'Home', isHome: true },
-    { text: 'Contact Me', isHome: false },
-    { text: 'About Us', isHome: false },
-    { text: 'Blogs', isHome: false },
-    { text: 'Login', isHome: false }
-  ]
-
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
-
-

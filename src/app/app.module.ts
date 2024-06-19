@@ -1,31 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { NavitemComponent } from './shared/navbar/navitem/navitem.component';
-import { BannerComponent } from './banner/banner.component';
-import { NotificationComponent } from './notification/notification.component';
-import { LayoutComponent } from './layout/layout.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { BlogComponent } from './blog/blog.component';
-import { HighlightDirective } from './highlight.directive';
 import { AngularFireModule } from '@angular/fire/compat'
 import { environment } from '../environments/environment';
+import {MatIconModule} from '@angular/material/icon';
+import { JobComponent } from './pages/job/job.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AppRoutingModule } from '../app/app-routing.module';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './pages/home/home.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
-    NavbarComponent,
-    NavitemComponent,
-    BannerComponent,
-    NotificationComponent,
-    LayoutComponent,
-    SidebarComponent,
-    BlogComponent,
-    HighlightDirective
-  ],
+    JobComponent,
+    LoginComponent,
+      NavbarComponent,HomeComponent
+   ],
   imports: [
     BrowserModule,
+    MatIconModule,
+    AppRoutingModule,
+    FormsModule,ReactiveFormsModule,BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
