@@ -43,6 +43,7 @@ export class UserService {
     );
   }
 
+
   updateJob(id: string, job: any) {
     return this.firestore.collection('jobs').doc(id).update(job);
   }

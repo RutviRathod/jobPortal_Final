@@ -8,7 +8,8 @@ const routes: Routes = [
   { path: '',component: LoginComponent, pathMatch: 'full' },
   { path: 'job', component: JobComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'job/:id', component: JobComponent }
 ];
 
 @NgModule({

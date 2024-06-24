@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import { UserService } from 'src/app/user.service';
@@ -49,12 +50,12 @@ export class HomeComponent implements OnInit {
    
   } 
 
-  onUpdate(jobdata: any) {
+  onUpdate(job:any) {
     const confirm = window.confirm("Are you sure you want to edit this job?");
     if(confirm){
-      this._router.navigate(['/job']);
-      this.jobModel = jobdata;
-      console.log("job data" ,this.jobModel);
+      console.log("job data" ,job.id);
+      this._router.navigate(['/job',job.id]);
+      
       
     }else{
       return;
